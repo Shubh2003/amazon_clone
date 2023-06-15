@@ -9,6 +9,7 @@ const PORT = 3000;
 const app = express();
 const DB = "mongodb+srv://daulkarshubham:Prathamesh2002@cluster0.xxmzznw.mongodb.net/?retryWrites=true&w=majority";
 
+app.use(express.json());
 app.use(authRouter);
 
 
@@ -21,7 +22,7 @@ mongoose.connect(DB).then(()=>{
     console.log(e);
 });
 // creating an api
-app.listen(PORT,() => {
-    console.log(`Connectaed at port ${PORT} hello`);
+app.listen(PORT,"0.0.0.0",() => {
+    console.log(`Connectaed at port ${PORT} `);
 });
 
